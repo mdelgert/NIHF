@@ -8,31 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		NIHF React Test.docx = NIHF React Test.docx
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{3BE3E0EE-993F-4D2A-81F2-B5F761A0FAD0}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{11DF8BC6-FB4B-4491-B6DC-ABBD2D99C763}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{6506BD3F-E67B-47F8-BF11-ECB6A899CA5D}"
-EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3BE3E0EE-993F-4D2A-81F2-B5F761A0FAD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BE3E0EE-993F-4D2A-81F2-B5F761A0FAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3BE3E0EE-993F-4D2A-81F2-B5F761A0FAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BE3E0EE-993F-4D2A-81F2-B5F761A0FAD0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11DF8BC6-FB4B-4491-B6DC-ABBD2D99C763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11DF8BC6-FB4B-4491-B6DC-ABBD2D99C763}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11DF8BC6-FB4B-4491-B6DC-ABBD2D99C763}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11DF8BC6-FB4B-4491-B6DC-ABBD2D99C763}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6506BD3F-E67B-47F8-BF11-ECB6A899CA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6506BD3F-E67B-47F8-BF11-ECB6A899CA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6506BD3F-E67B-47F8-BF11-ECB6A899CA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6506BD3F-E67B-47F8-BF11-ECB6A899CA5D}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

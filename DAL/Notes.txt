@@ -1,6 +1,0 @@
-﻿https://docs.microsoft.com/en-us/ef/core/get-started/full-dotnet/new-db
-Getting started with EF Core on .NET Framework with a New Database
-
-Add the following packages
-Install-Package Microsoft.EntityFrameworkCore.SqlServer
-Install-Package Microsoft.EntityFrameworkCore.Tools
