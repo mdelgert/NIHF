@@ -32,6 +32,9 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
         return <div>
             <h1>Parts</h1>
             <p>This component demonstrates fetching data from the server.</p>
+            <p>
+                <Link to="/addpart">Create New</Link>
+            </p>
             {contents}
         </div>;
     }

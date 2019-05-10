@@ -27,10 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\components\AddPart.tsx" />
     <None Remove="ClientApp\components\FetchPart.tsx" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\components\AddPart.tsx" />
     <TypeScriptCompile Include="ClientApp\components\FetchPart.tsx" />
   </ItemGroup>
 
