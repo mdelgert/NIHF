@@ -13,20 +13,10 @@ namespace NIHF.Web.Models
     {
         Context db = new Context();
 
-        public IEnumerable<Part> GetAllParts()
-        {
-            try
-            {
-                return db.Part.ToList();
-            }
-            catch
-            {
-                throw;
-            }
-        }
+        #region PARTS
 
-        //To Add new part record   
-        public int AddPart(Part part)
+        //CREATE
+        public int CreatePart(Part part)
         {
             try
             {
@@ -40,7 +30,22 @@ namespace NIHF.Web.Models
             }
         }
 
-        //To Delete the record of a particular part 
+        //READ
+        public IEnumerable<Part> ReadAllParts()
+        {
+            try
+            {
+                return db.Part.ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //UPDATE
+
+        //DELETE
         public int DeletePart(int id)
         {
             try
@@ -55,7 +60,25 @@ namespace NIHF.Web.Models
                 throw;
             }
         }
+        #endregion
 
+        #region MANUFACTURERS
+        //CREATE
+        public int CreateManufacturer(Manufacturer manufacturer)
+        {
+            try
+            {
+                db.Manufacturer.Add(manufacturer);
+                db.SaveChanges();
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //READ ALL 
         public IEnumerable<Manufacturer> GetAllManufacturers()
         {
             try
@@ -67,5 +90,24 @@ namespace NIHF.Web.Models
                 throw;
             }
         }
+
+        //UPDATE
+
+        //DELETE
+        public int DeleteManufacturer(int id)
+        {
+            try
+            {
+                Manufacturer manufacturer = db.Manufacturer.Find(id);
+                db.Manufacturer.Remove(manufacturer);
+                db.SaveChanges();
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        #endregion
     }
 }

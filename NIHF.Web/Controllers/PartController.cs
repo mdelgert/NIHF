@@ -11,33 +11,30 @@ namespace NIHF.Web.Controllers
     {
         DataAccessLayer dal = new DataAccessLayer();
 
-        [HttpGet]
-        [Route("api/Part/Index")]
-        public IEnumerable<Part> Index()
-        {
-            return dal.GetAllParts();
-        }
-
+        //CREATE
         [HttpPost]
         [Route("api/Part/Create")]
         public int Create(Part part)
         {
-            return dal.AddPart(part);
+            return dal.CreatePart(part);
         }
 
+        //READ ALL
+        [HttpGet]
+        [Route("api/Part/Index")]
+        public IEnumerable<Part> Index()
+        {
+            return dal.ReadAllParts();
+        }
+
+        //UPDATE
+
+        //DELETE
         [HttpDelete]
         [Route("api/Part/Delete/{id}")]
         public int Delete(int id)
         {
             return dal.DeletePart(id);
         }
-
-        [HttpGet]
-        [Route("api/Part/GetManufacturer")]
-        public IEnumerable<Manufacturer> GetManufacturer()
-        {
-            return dal.GetAllManufacturers();
-        }
-
     }
 }
