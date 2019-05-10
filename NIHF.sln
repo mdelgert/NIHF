@@ -8,7 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		NIHF React Test.docx = NIHF React Test.docx
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIHF.Web", "NIHF.Web\NIHF.Web.csproj", "{B6B421E4-2EF2-4E03-8C31-BE8A6E223F09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIHF.Web", "NIHF.Web\NIHF.Web.csproj", "{B6B421E4-2EF2-4E03-8C31-BE8A6E223F09}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{9AD90B4B-99B2-4569-9956-F3D3586C24D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,12 @@ Global
 		{B6B421E4-2EF2-4E03-8C31-BE8A6E223F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6B421E4-2EF2-4E03-8C31-BE8A6E223F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6B421E4-2EF2-4E03-8C31-BE8A6E223F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD90B4B-99B2-4569-9956-F3D3586C24D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD90B4B-99B2-4569-9956-F3D3586C24D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD90B4B-99B2-4569-9956-F3D3586C24D1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9AD90B4B-99B2-4569-9956-F3D3586C24D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD90B4B-99B2-4569-9956-F3D3586C24D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD90B4B-99B2-4569-9956-F3D3586C24D1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
