@@ -64,7 +64,6 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
         return <table className='table'>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Number</th>
                     <th>Name</th>
                     <th>Description</th>
@@ -74,7 +73,6 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
             <tbody>
                 {parts.map(part =>
                     <tr key={part.partID}>
-                        <td>{part.partID}</td>
                         <td>{part.number}</td>
                         <td>{part.name}</td>
                         <td>{part.description}</td>
