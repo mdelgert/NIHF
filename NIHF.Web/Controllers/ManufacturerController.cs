@@ -12,12 +12,6 @@ namespace NIHF.Web.Controllers
         DataAccessLayer dal = new DataAccessLayer();
 
         //CREATE
-        [HttpPost]
-        [Route("api/Manufacturer/Create")]
-        public int Create(Manufacturer manufacturer)
-        {
-            return dal.CreateManufacturer(manufacturer);
-        }
 
         //READ ALL
         [HttpGet]
@@ -30,12 +24,6 @@ namespace NIHF.Web.Controllers
         ////UPDATE
 
         ////DELETE
-        [HttpDelete]
-        [Route("api/Manufacturer/Delete/{id}")]
-        public int Delete(int id)
-        {
-            return dal.DeleteManufacturer(id);
-        }
 
     }
 }

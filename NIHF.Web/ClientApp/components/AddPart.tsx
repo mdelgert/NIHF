@@ -22,11 +22,11 @@ export class AddPart extends React.Component<RouteComponentProps<{}>, AddPartDat
                 this.setState({ manufactureList: data });
             });
 
-        var id = this.props.match.params["id"];
+        var partID = this.props.match.params["id"];
 
         // This will set state for Edit part
-        if (id > 0) {
-            fetch('api/Part/Read/' + id)
+        if (partID > 0) {
+            fetch('api/Part/Read/' + partID)
                 .then(response => response.json() as Promise<PartData>)
                 .then(data => {
                     this.setState({ title: "Edit", loading: false, partData: data });
@@ -62,7 +62,7 @@ export class AddPart extends React.Component<RouteComponentProps<{}>, AddPartDat
         const data = new FormData(event.target);
 
         // PUT request for Edit part.
-        if (this.state.partData.id) {
+        if (this.state.partData.partID) {
             fetch('api/Part/Update', {
                 method: 'PUT',
                 body: data,
@@ -97,27 +97,34 @@ export class AddPart extends React.Component<RouteComponentProps<{}>, AddPartDat
         return (
             <form onSubmit={this.handleSave} >
                 <div className="form-group row" >
-                    <input type="hidden" name="id" value={this.state.partData.id} />
+                    <input type="hidden" name="partID" value={this.state.partData.partID} />
                 </div>
+
                 < div className="form-group row" >
                     <label className=" control-label col-md-12" htmlFor="Name">Name</label>
                     <div className="col-md-4">
                         <input className="form-control" type="text" name="name" defaultValue={this.state.partData.name} required />
                     </div>
                 </div >
+                < div className="form-group row" >
+                    <label className=" control-label col-md-12" htmlFor="Name">Number</label>
+                    <div className="col-md-4">
+                        <input className="form-control" type="text" name="number" defaultValue={this.state.partData.number} required />
+                    </div>
+                </div >
                 <div className="form-group row">
                     <label className="control-label col-md-12" htmlFor="Description" >Description</label>
                     <div className="col-md-4">
-                        <input className="form-control" type="text" name="Department" defaultValue={this.state.partData.description} required />
+                        <input className="form-control" type="text" name="Description" defaultValue={this.state.partData.description} required />
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="control-label col-md-12" htmlFor="Manufacture">Manufacture</label>
+                    <label className="control-label col-md-12" htmlFor="Manufacturer">Manufacturer</label>
                     <div className="col-md-4">
-                        <select className="form-control" data-val="true" name="Manufacture" defaultValue={this.state.partData.manufacturer} required>
+                        <select className="form-control" data-val="true" name="Manufacturer" defaultValue={this.state.partData.manufacturer} required>
                             <option value="">-- Manufacture --</option>
-                            {manufactureList.map(manufacture =>
-                                <option key={manufacture.id} value={manufacture.name}>{manufacture.name}</option>
+                            {manufactureList.map(m =>
+                                <option key={m.manufacturerId} value={m.manufacturerName}>{m.manufacturerName}</option>
                             )}
                         </select>
                     </div>

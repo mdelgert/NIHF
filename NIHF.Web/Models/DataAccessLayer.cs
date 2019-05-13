@@ -91,26 +91,15 @@ namespace NIHF.Web.Models
 
         #region MANUFACTURERS
         //CREATE
-        public int CreateManufacturer(Manufacturer manufacturer)
-        {
-            try
-            {
-                db.Manufacturer.Add(manufacturer);
-                db.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                throw;
-            }
-        }
 
         //READ ALL 
         public IEnumerable<Manufacturer> GetAllManufacturers()
         {
             try
             {
-                return db.Manufacturer.ToList();
+                List<Manufacturer> lstManufacturer = new List<Manufacturer>();
+                lstManufacturer = (from ManufacturerList in db.Manufacturer select ManufacturerList).ToList();
+                return lstManufacturer;
             }
             catch
             {
@@ -121,20 +110,7 @@ namespace NIHF.Web.Models
         //UPDATE
 
         //DELETE
-        public int DeleteManufacturer(int id)
-        {
-            try
-            {
-                Manufacturer manufacturer = db.Manufacturer.Find(id);
-                db.Manufacturer.Remove(manufacturer);
-                db.SaveChanges();
-                return 1;
-            }
-            catch
-            {
-                throw;
-            }
-        }
+        
         #endregion
     }
 }

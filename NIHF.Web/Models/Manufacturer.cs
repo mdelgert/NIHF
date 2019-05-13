@@ -7,7 +7,7 @@ namespace NIHF.Web.Models
 {
     public class Manufacturer
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public int ManufacturerId { get; set; }
+        public string ManufacturerName { get; set; }
     }
 }

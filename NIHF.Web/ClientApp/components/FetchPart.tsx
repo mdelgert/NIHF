@@ -31,7 +31,6 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
 
         return <div>
             <h1>Parts</h1>
-            <p>This component demonstrates fetching data from the server.</p>
             <p>
                 <Link to="/addpart">Create New</Link>
             </p>
@@ -50,7 +49,7 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
                 this.setState(
                     {
                         parts: this.state.parts.filter((rec) => {
-                            return (rec.id != id);
+                            return (rec.partID != id);
                         })
                     });
             });
@@ -65,20 +64,24 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
         return <table className='table'>
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Number</th>
                     <th>Name</th>
                     <th>Description</th>
+                    <th>Manufacturer</th>
                 </tr>
             </thead>
             <tbody>
                 {parts.map(part =>
-                    <tr key={part.id}>
+                    <tr key={part.partID}>
+                        <td>{part.partID}</td>
                         <td>{part.number}</td>
                         <td>{part.name}</td>
                         <td>{part.description}</td>
+                        <td>{part.manufacturer}</td>
                         <td>
-                            <a className="CRUD" onClick={(id) => this.handleEdit(part.id)}>Edit</a>  |
-                            <a className="CRUD" onClick={(id) => this.handleDelete(part.id)}>Delete</a>
+                            <a className="CRUD" onClick={(id) => this.handleEdit(part.partID)}>Edit</a>  |
+                            <a className="CRUD" onClick={(id) => this.handleDelete(part.partID)}>Delete</a>
                         </td>
                     </tr>
                 )}
@@ -88,9 +91,9 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
 }
 
 export class PartData {
-    id: number = 0;
-    number: string;
-    name: string;
-    description: string;
-    manufacturer: string;
+    partID: number = 0;
+    number: string = "";
+    name: string = "";
+    description: string = "";
+    manufacturer: string = "Ford";
 }

@@ -14,6 +14,9 @@ namespace NIHF.Web.Models
         {
         }
 
+        public virtual DbSet<Manufacturer> Manufacturer { get; set; }
+        public virtual DbSet<Part> Part { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -24,7 +27,48 @@ namespace NIHF.Web.Models
             }
         }
 
-        public virtual DbSet<Manufacturer> Manufacturer { get; set; }
-        public virtual DbSet<Part> Part { get; set; }
-    }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Part>(entity =>
+            {
+                entity.HasKey(e => e.PartID);
+
+                entity.Property(e => e.Number)
+               .IsRequired()
+               .HasMaxLength(5)
+               .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+               .IsRequired()
+               .HasMaxLength(50)
+               .IsUnicode(false);
+
+                entity.Property(e => e.Description)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+                entity.Property(e => e.Manufacturer)
+                .IsRequired()
+                .HasMaxLength(50)
+                .IsUnicode(false);
+
+            });
+
+            modelBuilder.Entity<Manufacturer>(entity =>
+            {
+                entity.HasKey(e => e.ManufacturerId);
+
+               entity.Property(e => e.ManufacturerName)
+              .IsRequired()
+              .HasMaxLength(50)
+              .IsUnicode(false);
+
+            });
+
+
+        }
+
+        }
+
 }
