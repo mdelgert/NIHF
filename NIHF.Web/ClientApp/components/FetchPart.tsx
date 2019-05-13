@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 //import 'isomorphic-fetch';
 
 interface FetchPartState {
-    parts: Part[];
+    parts: PartData[];
     loading: boolean;
 }
 
@@ -14,14 +14,14 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
         this.state = { parts: [], loading: true };
 
         fetch('api/Part/Index')
-            .then(response => response.json() as Promise<Part[]>)
+            .then(response => response.json() as Promise<PartData[]>)
             .then(data => {
                 this.setState({ parts: data, loading: false });
             });
 
         // This binding is necessary to make "this" work in the callback
         this.handleDelete = this.handleDelete.bind(this);
-
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
     public render() {
@@ -57,12 +57,17 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
         }
     }
 
-    private renderPartsTable(parts: Part[]) {
+    private handleEdit(id: number) {
+        this.props.history.push("/Part/Update/" + id);
+    }
+
+    private renderPartsTable(parts: PartData[]) {
         return <table className='table'>
             <thead>
                 <tr>
                     <th>Number</th>
                     <th>Name</th>
+                    <th>Description</th>
                 </tr>
             </thead>
             <tbody>
@@ -70,9 +75,10 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
                     <tr key={part.id}>
                         <td>{part.number}</td>
                         <td>{part.name}</td>
+                        <td>{part.description}</td>
                         <td>
-                            
-                            <a className="action" onClick={(id) => this.handleDelete(part.id)}>Delete</a>
+                            <a className="CRUD" onClick={(id) => this.handleEdit(part.id)}>Edit</a>  |
+                            <a className="CRUD" onClick={(id) => this.handleDelete(part.id)}>Delete</a>
                         </td>
                     </tr>
                 )}
@@ -81,9 +87,10 @@ export class FetchPart extends React.Component<RouteComponentProps<{}>, FetchPar
     }
 }
 
-export class Part {
+export class PartData {
     id: number = 0;
     number: string;
     name: string;
     description: string;
+    manufacturer: string;
 }

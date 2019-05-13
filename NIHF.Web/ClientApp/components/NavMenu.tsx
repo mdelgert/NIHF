@@ -23,16 +23,6 @@ export class NavMenu extends React.Component<{}, {}> {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={ '/counter' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-education'></span> Counter
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={ '/fetchdata' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Fetch Data
-                            </NavLink>
-                        </li>
-                        <li>
                             <NavLink to={'/fetchpart'} activeClassName='active'>
                                 <span className='glyphicon glyphicon-th-list'></span> Fetch Part
                             </NavLink>
@@ -40,16 +30,6 @@ export class NavMenu extends React.Component<{}, {}> {
                         <li>
                             <NavLink to={'/addpart'} activeClassName='active'>
                                 <span className='glyphicon glyphicon-th-list'></span> Add Part
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/fetchmanufacture'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Fetch Manufacturer
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/addmanufacture'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Add Manufacturer
                             </NavLink>
                         </li>
                     </ul>

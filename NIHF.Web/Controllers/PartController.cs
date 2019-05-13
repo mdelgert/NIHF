@@ -19,6 +19,14 @@ namespace NIHF.Web.Controllers
             return dal.CreatePart(part);
         }
 
+        //READ
+        [HttpGet]
+        [Route("api/Part/Read/{id}")]
+        public Part Read(int id)
+        {
+            return dal.ReadPart(id);
+        }
+
         //READ ALL
         [HttpGet]
         [Route("api/Part/Index")]
@@ -28,6 +36,12 @@ namespace NIHF.Web.Controllers
         }
 
         //UPDATE
+        [HttpPut]
+        [Route("api/Part/Update")]
+        public int Edit(Part part)
+        {
+            return dal.UpdatePart(part);
+        }
 
         //DELETE
         [HttpDelete]

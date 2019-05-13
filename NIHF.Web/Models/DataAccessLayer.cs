@@ -31,6 +31,20 @@ namespace NIHF.Web.Models
         }
 
         //READ
+        public Part ReadPart(int id)
+        {
+            try
+            {
+                Part part = db.Part.Find(id);
+                return part;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //READ ALL
         public IEnumerable<Part> ReadAllParts()
         {
             try
@@ -44,6 +58,19 @@ namespace NIHF.Web.Models
         }
 
         //UPDATE
+        public int UpdatePart(Part part)
+        {
+            try
+            {
+                db.Entry(part).State = EntityState.Modified;
+                db.SaveChanges();
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
 
         //DELETE
         public int DeletePart(int id)
